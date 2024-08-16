@@ -1,0 +1,50 @@
+﻿#server:
+#  port: 6010
+#
+#spring:
+#  profiles:
+#    active: dev
+#  application:
+#    name: z7-gateway
+#  cloud:
+#    cloud:
+#      config:
+#        fail-fast: true
+#        name: ${spring.application.name}
+#        profile: ${spring.profiles.active}
+#        discovery:
+#          ##开启客户端，根据服务id到注册中心获取配置信息
+#          enabled: true
+#          ##告诉当前客户端 统一配置中心的服务端服务id
+#          service-id: z7-config
+#
+###暴露监控端口
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#
+#---
+###本地、测试 开发环境配置
+#spring:
+#  profiles: dev,test
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:7001/eureka/
+#  instance:
+#    instance-id: ${spring.application.name}:${server.port}
+#    ##访问路径可以显示IP地址
+#    prefer-ip-address: true
+#---
+###公测环境配置
+#spring:
+#  profiles: uat
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://node1:7001/eureka/,http://node2:7002/eureka/
+#  instance:
+#    instance-id: ${spring.application.name}:${server.port}
+#    prefer-ip-address: true

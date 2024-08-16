@@ -1,0 +1,6 @@
+FROM java:8-jre
+
+ADD ./jar/z7-config.jar /app/
+CMD ["java", "-Xmx200m", "-jar", "/app/z7-config.jar"]
+
+EXPOSE 4001

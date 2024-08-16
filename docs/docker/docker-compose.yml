@@ -1,0 +1,41 @@
+version: '2'
+services:
+  z7-discovery:
+    build:
+      context: ./
+      dockerfile: Dockerfile-eureka
+    restart: always
+    ports:
+      - 1025:1025
+
+  z7-config:
+    links:
+      - -z7-discovery:eureka
+    build:
+      context: ./
+      dockerfile: Dockerfile-config
+    restart: always
+
+  z7-auth:
+    links:
+      - z7-discovery:eureka
+    build:
+      context: ./
+      dockerfile: Dockerfile-auth
+    restart: always
+    ports:
+      - 3000:3000
+
+  z7-gateway:
+    links:
+      - z7-discovery:eureka
+      - z7-auth:auth
+    build:
+      context: ./
+      dockerfile: Dockerfile-gateway
+    restart: always
+    ports:
+      - 9999:9999
+
+
+

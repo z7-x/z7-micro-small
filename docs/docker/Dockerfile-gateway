@@ -1,0 +1,7 @@
+FROM java:8-jre
+
+ADD ./jar/z7-gateway.jar /app/
+
+CMD ["java", "-Xmx500m",  "-jar", "/app/z7-gateway.jar"]
+
+EXPOSE 9999

@@ -1,0 +1,5 @@
+FROM java:8-jre
+
+ADD ./jar/z7-auth.jar /app/
+
+CMD ["java", "-Xmx500m", "-jar", "/app/z7-auth.jar"]

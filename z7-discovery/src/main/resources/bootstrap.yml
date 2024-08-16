@@ -6,6 +6,9 @@ spring:
     ##微服务名
   application:
     name: z7-discovery
+
+
+
 ---
 spring:
   profiles: dev

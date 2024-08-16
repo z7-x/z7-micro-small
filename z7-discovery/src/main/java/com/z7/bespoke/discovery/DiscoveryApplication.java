@@ -20,10 +20,10 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 public class DiscoveryApplication {
     public static void main(String[] args) {
         SpringApplication.run(DiscoveryApplication.class, args);
-//        在 Spring Boot 2.4 版本以后，bootstrap.yml 的加载机制有所变化。如果你升级到 Spring Boot 2.7.x，但项目中未正确配置 Spring Cloud 的加载机制，可能会导致 bootstrap.yml 无法加载。
-//        new SpringApplicationBuilder(DiscoveryApplication.class)
-//                .properties("spring.config.name:bootstrap")
-//                .build()
-//                .run(args);
+/*        在 Spring Boot 2.4 版本以后，bootstrap.yml 的加载机制有所变化。如果你升级到 Spring Boot 2.7.x，但项目中未正确配置 Spring Cloud 的加载机制，可能会导致 bootstrap.yml 无法加载。
+        new SpringApplicationBuilder(DiscoveryApplication.class)
+                .properties("spring.config.name:bootstrap")
+                .build()
+                .run(args);*/
     }
 }

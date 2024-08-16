@@ -1,4 +1,4 @@
-package com.z7.besopke;
+package com.z7.besopke.auth;
 
 
 import org.springframework.boot.SpringApplication;
